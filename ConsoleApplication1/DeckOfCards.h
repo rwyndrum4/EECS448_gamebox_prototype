@@ -3,7 +3,7 @@
 class DeckOfCards
 {
 private:
-	Card* DealersHand[];
+	Card* DealersHand[52];
 public:
 	DeckOfCards();
 	Card* getDealersHand();
