@@ -1,7 +1,7 @@
-gamebox: main.o Connect4Driver.o Connect4.o C4board.o Card.o DeckOfCards.o cardDriver.o
-	g++ -std=c++11 -g -Wall main.o Connect4Driver.o Connect4.o C4board.o Card.o DeckOfCards.o cardDriver.o -o gamebox
+gamebox: main.o Connect4Driver.o Connect4.o C4board.o Card.o DeckOfCards.o cardDriver.o keyboardListener.o board.o snakeDriver.o
+	g++ -std=c++11 -g -Wall main.o Connect4Driver.o Connect4.o C4board.o Card.o DeckOfCards.o cardDriver.o keyboardListener.o board.o snakeDriver.o -o gamebox
 
-main.o: main.cpp Connect4Driver.h cardDriver.h
+main.o: main.cpp Connect4Driver.h cardDriver.h snakeDriver.h
 	g++ -std=c++11 -g -Wall -c main.cpp
 
 Connect4Driver.o: Connect4Driver.h Connect4Driver.cpp Connect4.h
@@ -21,6 +21,15 @@ DeckOfCards.o: DeckOfCards.cpp DeckOfCards.h
 
 Card.o: Card.h Card.cpp
 	g++ -std=c++11 -g -Wall -c Card.cpp
+
+snakeDriver.o: snakeDriver.h snakeDriver.cpp
+		g++ -std=c++11 -g -Wall -c snakeDriver.cpp
+
+keyboardListener.o : keyboardListener.cpp
+	g++ -std=c++11 -g -Wall -c keyboardListener.cpp
+
+board.o : board.cpp
+	g++ -std=c++11 -g -Wall -c board.cpp
 
 clean:
 	rm *.o gamebox
