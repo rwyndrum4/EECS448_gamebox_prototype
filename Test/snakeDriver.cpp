@@ -14,8 +14,9 @@ int snakeDriver::run()
     gameboard.food();
     gameboard.print();
     cout << "Welcome to Greddy Snake.\n";
-        cout << "Either hit the wall or ate yourself will failure.\n";
-        cout << "Try your best hold out to the end.\n";
+        cout << "Either hitting a wall or eating yourself will result in failure.\n";
+		cout << "To win the game the snake needs to cover every square of the board.\n"
+        cout << "Try your best to hold out to the end.\n";
         cout << "ENTER w/a/s/d TO START THE GAME\n";
     int orientation = 0;
 
