@@ -14,7 +14,7 @@ int snakeDriver::run()
     gameboard.food();
     gameboard.print();
     cout << "Welcome to Greddy Snake.\n";
-        cout << "In this game either hit the wall and ate your self will failure.\n";
+        cout << "Either hit the wall or ate yourself will failure.\n";
         cout << "Try your best hold out to the end.\n";
         cout << "ENTER w/a/s/d TO START THE GAME\n";
     int orientation = 0;
@@ -41,7 +41,7 @@ int snakeDriver::run()
             {
                 orientation = tempOrientation;
             }
-            system ("sleep 0.01");
+            system ("sleep 0.006");
         }
         
         gameboard.getOrientation(orientation);
