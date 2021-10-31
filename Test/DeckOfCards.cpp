@@ -2,10 +2,19 @@
 #include <string>
 
 DeckOfCards::DeckOfCards(){
-	*DealersHand = new Card[52];
+	*DealersHand = new Card[DealersHandSize];
 	for (int i = 1; i <= 4; i++) {
 		for (int j = 1; j <= 13; j++) {
 			DealersHand[((((i-1) * 13) + j) - 1)] = new Card(i, j);
+		}
+	}
+}
+
+DeckOfCards::~DeckOfCards() {
+	*DealersHand = new Card[DealersHandSize];
+	for (int i = 1; i <= 4; i++) {
+		for (int j = 1; j <= 13; j++) {
+			delete DealersHand[((((i - 1) * 13) + j) - 1)];
 		}
 	}
 }

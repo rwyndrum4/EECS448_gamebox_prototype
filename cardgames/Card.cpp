@@ -3,7 +3,7 @@
 
 Card::Card(int i, int j)
 {
-	//* delete first / to attempt to fix switch case
+	/* delete first / to attempt to fix switch case
 	if (i == 1) {
 		setFace("Spades");
 	}
@@ -22,7 +22,7 @@ Card::Card(int i, int j)
 	
 
 	/*/
-	This switch case deals with setting up card faces and is also haunted
+	//This switch case deals with setting up card faces and is also haunted
 	switch(i){
 	case 1:
 		setFace("Spades");
@@ -57,7 +57,8 @@ Card::Card(int i, int j)
 	}
 	else
 	{
-		std::cout << "u messed something up\n";
+		setValue("Junk");
+		std::cout << "Junk Card\n";
 	}
 	card = value + " of " + face;
 	std::cout << "Card assigned values: " << i << " # of iterations. " << j << " card 1 - 13. " << ((((i - 1) * 13) + j) - 1) << " index in the array. " << card << '\n';
@@ -65,6 +66,8 @@ Card::Card(int i, int j)
 
 Card::Card(){
 	std::cout << "empty card created\n";
+	this->setFace("Empty");
+	this->setValue("Empty");
 }
 
 void Card::setFace(string cardFace){
