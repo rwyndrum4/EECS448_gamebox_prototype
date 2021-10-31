@@ -2,6 +2,7 @@
 #include "keyboardListener.h"
 #include "board.h"
 #include "snakeDriver.h"
+#include <string>
 
 
 
@@ -12,10 +13,14 @@ int snakeDriver::run()
     gameboard.initialSnake();
     gameboard.food();
     gameboard.print();
+    cout << "Welcome to Greddy Snake.\n";
+        cout << "In this game either hit the wall and ate your self will failure.\n";
+        cout << "Try your best hold out to the end.\n";
+        cout << "ENTER w/a/s/d TO START THE GAME\n";
     int orientation = 0;
+
     do
     {
-        cout << "ENTER w/a/s/d TO START THE GAME\n";
         orientation = getchar();
         gameboard.getOrientation(orientation);
     }while (orientation != 119 && orientation != 97 && orientation != 100 && orientation != 115);
