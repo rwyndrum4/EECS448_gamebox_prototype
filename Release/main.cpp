@@ -3,6 +3,7 @@
 #include "Connect4Driver.h"
 #include "cardDriver.h"
 #include "snakeDriver.h"
+#include "a2048runner.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main()
 {
 	int selection;
 	do{
-		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for a card game, 3 for Greedy Snake or enter 4 to quit: ";
+		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for a card game, 3 for Greedy Snake, 4 for 2048 or 5 for quit: ";
 		cin>>selection;
 		if(selection==1)
 		{
@@ -30,8 +31,14 @@ int main()
 			snakeDriver myDriver;
 			myDriver.run();
 		}
+		else if(selection==4)
+		{
+			cout<<"You have selected 2048.\n";
+			a2048runner myDriver;
+			myDriver.run();
+		}
 
-	}while(selection !=4);
+	}while(selection !=5);
 
   return 0;
 }
