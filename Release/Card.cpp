@@ -19,9 +19,8 @@ Card::Card(int i, int j)
 	else {
 		std::cout << "broken\n";
 	}
-	
-
 	/*/
+
 	//This switch case deals with setting up card faces and is also haunted
 	switch(i){
 	case 1:
@@ -38,8 +37,6 @@ Card::Card(int i, int j)
 		break;
 	}
 	//*/
-
-
 	//This combination deals with cards values
 	if (j <= 10 && j >= 1){
 		string temp;
