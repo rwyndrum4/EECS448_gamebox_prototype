@@ -14,7 +14,7 @@ int main()
 	int selection;
 	do{
 		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for blackjack, 3 for Greedy Snake, 4 for 2048\n"
-			<<"5 for Card test suite or enter, 6 for Snake test suite, 7 for 2048 test suite, 8 to quit: ";
+			<<"5 for Card test suite or enter, 6 for Snake test suite, 7 for 2048 test suite, 8 for Connect4 test suite, 9 to quit: ";
 		cin>>selection;
 		if(selection==1)
 		{
@@ -58,8 +58,14 @@ int main()
 			a2048Test myDriver;
 			myDriver.run();
 		}
+		else if(selection == 8)
+		{
+			cout<<"You have selected Connect4 Test Suite.\n";
+			Connect4Driver mytestdriver;
+			mytestdriver.test();
+		}
 
-	}while(selection !=8);
+	}while(selection !=9);
 
   return 0;
 }
