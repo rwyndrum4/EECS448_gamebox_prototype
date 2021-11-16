@@ -4,7 +4,7 @@ using namespace std;
 
 a2048a::a2048a()
 {
-    boxes=new square*[15]; //generate 16 squares
+    boxes=new square*[16]; //generate 16 squares
     for(int i = 0; i<16; i++)
     {
         boxes[i]=new square; //generate 16 boxes
