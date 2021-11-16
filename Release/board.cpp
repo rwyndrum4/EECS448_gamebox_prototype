@@ -65,32 +65,36 @@ board :: ~board()
 
 }
 
-void board:: getOrientation(int num)
+bool board:: getOrientation(int num)
 {
     if (num == 119) //w
     {
         orientation = 1;
+        return true;
     }
     else if (num == 97)//a
     {
         orientation = 4;
+        return true;
     }
     else if (num == 100)//d
     {
         orientation = 3;
+        return true;
     }
     else if (num == 115)//s
     {
         orientation = 2;
+        return true;
     }
     else
     {
-
+        return false;
     }
 
 }
 
-void board:: print()
+bool board:: print()
 {
     for (int i = 0 ; i < 20 ; i++)
     {
@@ -116,11 +120,11 @@ void board:: print()
         cout << endl;
     }
 
-    return;
+    return true;
 
 }
 
-void board:: food()
+bool board:: food()
 {
     do
     {
@@ -129,6 +133,8 @@ void board:: food()
         foodrow = 1 + (rand() % 38); //get random number for row
     } while (innerboard[foodcol][foodrow] != 0); // whilke it isn't the blank space
     innerboard[foodcol][foodrow] = 999; // innerboard's food point
+
+    return true;
     
 
 }
@@ -145,9 +151,10 @@ bool board:: isfood(int row, int col)
     }
 }
 
-void board:: initialSnake()
+bool board:: initialSnake()
 {
     innerboard[9][19] = 1; // the starter point of the snake
+    return true;
 }
 
 int board :: move ()

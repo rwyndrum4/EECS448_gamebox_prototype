@@ -19,14 +19,14 @@ class board
     board();
     ~board();
 
-    void getOrientation(int num);
+    bool getOrientation(int num);
     //@input - the number of the orientation
     //@process - renew the orientation
 
-    void print();
+    bool print();
     //@process - print the board
 
-    void food();
+    bool food();
     //@process - randomly generate a point of food
 
     bool isfood(int row, int col);
@@ -34,7 +34,7 @@ class board
     //@process - check if the point is food
     //@return - ture for food, false else
 
-    void initialSnake();
+    bool initialSnake();
     //@process - initial the start point of snake
 
 

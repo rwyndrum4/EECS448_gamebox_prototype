@@ -4,6 +4,7 @@
 #include "cardDriver.h"
 #include "snakeDriver.h"
 #include "a2048runner.h"
+#include "snakeTest.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ int main()
 {
 	int selection;
 	do{
-		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for blackjack, 3 for Greedy Snake, 4 for 2048, 5 for Card test suite or enter 6 to quit: ";
+		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for blackjack, 3 for Greedy Snake, 4 for 2048, 5 for Card test suite or enter, 6 for Snake testsuite, 7 to quit: ";
 		cin>>selection;
 		if(selection==1)
 		{
@@ -43,8 +44,14 @@ int main()
 			cardDriver myDriver;
 			myDriver.debug();
 		}
+		else if(selection == 6)
+		{
+			cout<<"You have selected Snake Test Suite.\n";
+			snakeTest myDriver;
+			myDriver.run();
+		}
 
-	}while(selection !=6);
+	}while(selection !=7);
 
   return 0;
 }
