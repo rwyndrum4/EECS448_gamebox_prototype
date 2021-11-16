@@ -1,5 +1,5 @@
-gamebox: main.o Connect4Driver.o Connect4.o C4board.o Card.o blackjack.o DeckOfCards.o cardDriver.o keyboardListener.o board.o snakeDriver.o a2048runner.o square.o a2048a.o snakeTest.o
-	g++ -std=c++11 -g -Wall main.o Connect4Driver.o Connect4.o C4board.o Card.o blackjack.o DeckOfCards.o cardDriver.o keyboardListener.o board.o snakeDriver.o a2048runner.o square.o a2048a.o snakeTest.o -o gamebox
+gamebox: main.o Connect4Driver.o Connect4.o C4board.o Card.o blackjack.o DeckOfCards.o cardDriver.o keyboardListener.o board.o snakeDriver.o a2048runner.o square.o a2048a.o snakeTest.o a2048Test.o
+	g++ -std=c++11 -g -Wall main.o Connect4Driver.o Connect4.o C4board.o Card.o blackjack.o DeckOfCards.o cardDriver.o keyboardListener.o board.o snakeDriver.o a2048runner.o square.o a2048a.o snakeTest.o a2048Test.o -o gamebox
 
 main.o: main.cpp Connect4Driver.h cardDriver.h snakeDriver.h
 	g++ -std=c++11 -g -Wall -c main.cpp
@@ -41,6 +41,8 @@ a2048a.o : a2048a.cpp
 	g++ -std=c++11 -g -Wall -c a2048a.cpp
 snakeTest.o: snakeTest.cpp
 	g++ -std=c++11 -g -Wall -c snakeTest.cpp
+a2048Test.o: a2048Test.cpp
+	g++ -std=c++11 -g -Wall -c a2048Test.cpp
 
 clean:
 	rm *.o gamebox

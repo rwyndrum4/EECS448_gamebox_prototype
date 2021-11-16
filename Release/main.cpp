@@ -5,6 +5,7 @@
 #include "snakeDriver.h"
 #include "a2048runner.h"
 #include "snakeTest.h"
+#include "a2048Test.h"
 
 using namespace std;
 
@@ -12,7 +13,8 @@ int main()
 {
 	int selection;
 	do{
-		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for blackjack, 3 for Greedy Snake, 4 for 2048, 5 for Card test suite or enter, 6 for Snake testsuite, 7 to quit: ";
+		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for blackjack, 3 for Greedy Snake, 4 for 2048\n"
+			<<"5 for Card test suite or enter, 6 for Snake test suite, 7 for 2048 test suite, 8 to quit: ";
 		cin>>selection;
 		if(selection==1)
 		{
@@ -50,8 +52,14 @@ int main()
 			snakeTest myDriver;
 			myDriver.run();
 		}
+		else if (selection == 7)
+		{
+			cout<<"You have selected 2048 Test Suite.\n";
+			a2048Test myDriver;
+			myDriver.run();
+		}
 
-	}while(selection !=7);
+	}while(selection !=8);
 
   return 0;
 }

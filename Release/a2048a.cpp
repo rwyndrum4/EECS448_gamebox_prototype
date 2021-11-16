@@ -13,10 +13,14 @@ a2048a::a2048a()
 
 a2048a::~a2048a()
 {
-
+    for(int i = 0; i<16; i++)
+    {
+        delete boxes[i];
+    }
+    delete[] boxes;
 }
 
-void a2048a::print()
+bool a2048a::print()
 {
     score = 0; // show the sore
     for (int i = 0 ; i < 16; i++)
@@ -154,6 +158,7 @@ void a2048a::print()
     cout << "|         | |         | |         | |         |\n";
     cout << "|_________| |_________| |_________| |_________|\n";
 
+    return true;
 
 }
 

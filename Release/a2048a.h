@@ -17,7 +17,7 @@ class a2048a
     a2048a();
     ~a2048a();
 
-    void print();
+    bool print();
     //@process - print the map of 2048
 
     bool generate();

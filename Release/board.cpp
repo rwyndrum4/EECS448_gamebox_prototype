@@ -281,6 +281,7 @@ int board :: move ()
             }
         }
     }
+    return 0;
 }
 
 void board:: moveForEmpty()
