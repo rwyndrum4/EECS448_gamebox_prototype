@@ -11,7 +11,7 @@ int main()
 {
 	int selection;
 	do{
-		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for a card game, 3 for Greedy Snake, 4 for 2048 or 5 for quit: ";
+		cout<<"Please select a game to play.\nChoose 1 for connect four, 2 for blackjack, 3 for Greedy Snake, 4 for 2048, 5 for Card test suite or enter 6 to quit: ";
 		cin>>selection;
 		if(selection==1)
 		{
@@ -21,7 +21,7 @@ int main()
 		}
 		else if(selection==2)
 		{
-			cout<<"You have selected card game.\n";
+			cout<<"You have selected blackjack.\n";
 			cardDriver myDriver;
 			myDriver.run();
 		}
@@ -37,8 +37,14 @@ int main()
 			a2048runner myDriver;
 			myDriver.run();
 		}
+		else if(selection==5)
+		{
+			cout<<"You have selected Card Test Suite.\n";
+			cardDriver myDriver;
+			myDriver.debug();
+		}
 
-	}while(selection !=5);
+	}while(selection !=6);
 
   return 0;
 }
