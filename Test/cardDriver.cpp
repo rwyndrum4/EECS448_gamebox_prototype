@@ -1,23 +1,75 @@
 #include <iostream>
 #include "cardDriver.h"
+#include "blackjack.h"
+#include "DECKOFCARDS.H"
 using namespace std;
 void cardDriver::run()
 {
-		std::cout << "Hello World!\n";
-		DeckOfCards* deck = new DeckOfCards;
-		for (int i = 1; i <= 52; i++) {
-			string whichcard = deck->getCard(i - 1)->getInfo();
-			cout << whichcard << '\n';
-		}
+	cout << "Welcome to the card deck! 1 for deck debugging  2 for blackjack\n";
+	int selection = 0;
+	cin >> selection;
+
+	if (selection == 1) {
+		int userChoice = 0;
+		DeckOfCards deck;
+		do {
+			cout << "\n1) Print dealer hand    2)Print player hand    3)Shuffle    4)Print Pile      5) dealcards to player    6) player to pile     7)dealer to pile     9)Exit\n";
+			cin >> userChoice;
+			if (userChoice == 1) {
+				deck.printDealerHand();
+			}
+			else if (userChoice == 2) {
+				deck.printPlayerHand();
+			}
+			else if (userChoice == 3) {
+				deck.shuffle();
+			}
+			else if (userChoice == 4) {
+				deck.printPile();
+			}
+			else if (userChoice == 5) {
+				cout << "How many cards would you like to deal?\n ";
+				int howMany = 0;
+				cin >> howMany;
+				deck.dealcards(howMany);
+				cout << "Done.\n";
+			}
+			else if (userChoice == 6) {
+				deck.playToPile();
+			}
+			else if (userChoice == 7) {
+				deck.dealToPile();
+			}
+			else if (userChoice == 8) {
+
+			}
+			else if (userChoice == 9) {
+				break;
+			}
+			else {
+				cout << "bad input\n\n";
+			}
+		} while (userChoice != 9);
+	}
+	else if (selection == 2) {
+		char response = '\0';
+		bool keepPlaying = true;
+		do {
+			blackjack newGame;
+			newGame.play();
+			cout << "Would you like to player another game?(Y/N)\n";
+			cin >> response;
+			if (response == 'Y' || response == 'y') {
+				keepPlaying = true;
+			}
+			else if (response == 'N' || response == 'n') {
+				break;
+			}
+			else {
+				cout << "Invalid response, starting a new game.\n";
+			}
+		} while (keepPlaying == true);
+		cout << "Thanks for playing!\n\n\n\n";
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

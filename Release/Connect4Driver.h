@@ -1,18 +1,19 @@
 //Exec.h
-#ifndef EXEC_H
-#define EXEC_H
+#ifndef CONNECT4DRIVER_H
+#define CONNECT4DRIVER_H
 
 #include <iostream>
 #include <exception>
 
 
-class Exec
+class Connect4Driver
 {
 private:
 
 
 public:
-  void menu();
+  void run();
+  void test();
 
 };
 //#include "Exec.cpp"
