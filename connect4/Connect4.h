@@ -18,12 +18,8 @@ private:
 
 public:
   Connect4();
-
-  //@input - none
-	//@process - Starts the Connect4 game
-	//@return - none
   void rungame();
-
+  
 };
 
 #endif
