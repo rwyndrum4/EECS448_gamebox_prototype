@@ -39,20 +39,24 @@ void Connect4::rungame()
     inputcolumn=stoi(choosencolumn)-1;
     if(turn%2 == 0)
     {
-      gameboard.placechip(inputcolumn,'X');
+      if(gameboard.placechip(inputcolumn,'X')){
+        turn++;
+      }
     }
     else
     {
-      gameboard.placechip(inputcolumn,'O');
+      if(gameboard.placechip(inputcolumn,'O')){
+        turn++;
+      }
     }
-    turn++;
+
 
     //check for winning board
     player1winner=gameboard.check4inarow('X');
     player2winner=gameboard.check4inarow('O');
   }
 
-  //declar winner
+  //declare winner
   if(player1winner == true)
   {
     std::cout <<"Player 1 Wins!\n";

@@ -13,6 +13,7 @@ private:
 
 public:
   void run();
+  void test();
 
 };
 //#include "Exec.cpp"
