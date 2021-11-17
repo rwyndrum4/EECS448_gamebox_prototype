@@ -15,7 +15,7 @@ void Connect4::rungame()
 {
   std::string choosencolumn = "0";
   int inputcolumn = 0;
-  //std::cout <<"You are playing Connect 4.\n";
+  std::cout <<"You are playing Connect 4.\n";
 
   while(player1winner == false && player2winner == false) //while game is in progress
   {
@@ -39,24 +39,20 @@ void Connect4::rungame()
     inputcolumn=stoi(choosencolumn)-1;
     if(turn%2 == 0)
     {
-      if(gameboard.placechip(inputcolumn,'X')){
-        turn++;
-      }
+      gameboard.placechip(inputcolumn,'X');
     }
     else
     {
-      if(gameboard.placechip(inputcolumn,'O')){
-        turn++;
-      }
+      gameboard.placechip(inputcolumn,'O');
     }
-
+    turn++;
 
     //check for winning board
     player1winner=gameboard.check4inarow('X');
     player2winner=gameboard.check4inarow('O');
   }
 
-  //declare winner
+  //declar winner
   if(player1winner == true)
   {
     std::cout <<"Player 1 Wins!\n";

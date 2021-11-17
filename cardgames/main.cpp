@@ -1,14 +1,21 @@
 #include <iostream>
-#include "cardDriver.h"
+#include"DeckOfCards.h"
 using namespace std;
-void cardDriver::run()
+int main()
 {
+	cout << "Welcome to Group 8's gamebox!\nWhich game would you like to play? (1/2/3)";
+	int selection = 0;
+	cin >> selection;
+
+	if (selection == 1) {
 		std::cout << "Hello World!\n";
 		DeckOfCards* deck = new DeckOfCards;
 		for (int i = 1; i <= 52; i++) {
 			string whichcard = deck->getCard(i - 1)->getInfo();
 			cout << whichcard << '\n';
-		}
+	}
+		cout << "Done.";
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
